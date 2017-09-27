@@ -134,13 +134,17 @@ for the large .bam file.
 Executing these scripts will print the following feedback for the small .bam file:
 
 elPrep version 2.61. See http://github.com/exascience/elprep for more information.
+
 Executing command:
+
   elprep NA12878-chr22-10pct.bam NA12878-chr22-10pct.only_mapped.reordered-contigs.read-group.bam --filter-unmapped-reads --replace-reference-sequences ucsc.hg19.dict --replace-read-group "ID:group1 LB:lib1 PL:illumina PU:unit1 SM:sample1" --sorting-order unknown --gc-on 2 --nr-of-threads 72
 
 or the following feedback for the large .bam file:
 
 elPrep version 2.61. See http://github.com/exascience/elprep for more information.
+
 Executing command:
+
   elprep NA12878-chr22.bam NA12878-chr22.only_mapped.reordered-contigs.read-group.bam --filter-unmapped-reads --replace-reference-sequences ucsc.hg19.dict --replace-read-group "ID:group1 LB:lib1 PL:illumina PU:unit1 SM:sample1" --sorting-order unsorted --gc-on 2 --nr-of-threads 72
 
 The elPrep commands that are printed in the feedback are the actual elPrep commands that are executed by those scripts. Hence you can also copy-paste these commands directly into your terminal instead of running the bash scripts.
@@ -164,13 +168,17 @@ or
 Executing these scripts will print the following feedback for the small .bam file:
 
 elPrep version 2.61. See http://github.com/exascience/elprep for more information.
+
 Executing command:
+
   elprep NA12878-chr22-10pct.bam NA12878-chr22-10pct.only_mapped.reordered-contigs.sorted.deduplicated.read-group.bam --filter-unmapped-reads --replace-reference-sequences ucsc.hg19.dict --replace-read-group "ID:group1 LB:lib1 PL:illumina PU:unit1 SM:sample1" --mark-duplicates --sorting-order coordinate --gc-on 0 --nr-of-threads 72 --split-file
 	  
 or the following for the large .bam file:
 
 elPrep version 2.61. See http://github.com/exascience/elprep for more information.
+
 Executing command:
+
   elprep NA12878-chr22.bam NA12878-chr22.only_mapped.reordered-contigs.sorted.deduplicated.read-group.bam --filter-unmapped-reads --replace-reference-sequences ucsc.hg19.dict --replace-read-group "ID:group1 LB:lib1 PL:illumina PU:unit1 SM:sample1" --mark-duplicates --sorting-order coordinate --gc-on 0 --nr-of-threads 72 --split-file
 
 The elPrep commands that are printed in the feedback are the actual elPrep commands that are executed by those scripts. Hence you can also copy-paste these commands directly into your terminal instead of running the bash scripts.
@@ -190,14 +198,18 @@ Executing this script will print the following feedback:
 First, a call to the elprep split command is shown:
 
 elPrep version 2.61. See http://github.com/exascience/elprep for more information.
+
 Executing command:
+
   elprep split /dev/stdin /scratch/username/elprep-old-demo/temp-1506520452.55/ --output-prefix SRR1611184 --output-type sam --nr-of-threads 72
 elPrep version 2.61. See http://github.com/exascience/elprep for more information.
 
 Afterwards, a series of regular elprep commands is performed, one for each split file:
 
 elPrep version 2.61. See http://github.com/exascience/elprep for more information.
+
 Executing command:
+
   elprep /scratch/username/elprep-old-demo/temp-1506520452.55/splits/SRR1611184-chr6_cox_hap2.sam /scratch/username/elprep-old-demo/temp-processed-1506520452.55/SRR1611184-chr6_cox_hap2.sam --filter-unmapped-reads --replace-reference-sequences ucsc.hg19.dict --replace-read-group "ID:group1 LB:lib1 PL:illumina PU:unit1 SM:sample1" --mark-duplicates --sorting-order coordinate --gc-on 0 --nr-of-threads 72 --split-file
 
 	...
@@ -205,7 +217,9 @@ Executing command:
 Finally, an elprep merge command is performed to combine the results of the split files into a single output file:
 
 elPrep version 2.61. See http://github.com/exascience/elprep for more information.
+
 Executing command:
+
   elprep merge /scratch/username/elprep-old-demo/temp-processed-1506520452.55/ /dev/stdout --nr-of-threads 72
 	  
 ## Resetting the demos
