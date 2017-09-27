@@ -4,25 +4,9 @@ elPrep is a high-performance tool for preparing .sam/.bam/.cram files for varian
 
 elPrep is designed as an in-memory and multi-threaded application to fully take advantage of the processing power available with modern servers. Its software architecture is based on functional programming techniques, which allows easy composition of multiple alignment filters and optimizations such as loop merging. To make this possible, elPrep proposes a couple of new algorithms. For example, for duplicate marking we devised an algorithm that expresses the operation as a single-pass filter using memoization techniques and hierarchical hash tables for efficient parallel synchronisation.
 
+In our [PLOS one paper](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132868) we showed that elPrep executes a 5-step preparation pipeline between 6-10 times faster than Picard/SAMtools for whole-exome data, and 5x faster for whole-genome data. Please see the demo scripts we include for benchmark tests.
+
 The main advantage of elPrep is very fast execution times on high-end backend servers, as is available for example through Amazon cloud computing services or custom server setups. We do not recommend using elPrep on laptops, desktops, or low-end servers. Please consult the system requirements below for more details.
-
-The table below shows the execution time of the preparation phases in a whole-genome-sequencing pipeline for NA12878 on a 4x10-core Intel Xeon E7-4870 server with 512GB RAM. The sam file is split up and processed per chromosome. The preparation phases in this example include filtering unmapped reads, sorting for coordinate order, marking duplicates, adding read group information, and reordering the reference sequence dictionary for GATK.
-
-The table shows that the preparation phase with elPrep is 25x faster than with SAMtools and Picard. The output of elPrep is 100% equivalent to output produced by SAMtools and Picard.
-
-	Preparation of NA12878 on one 4x10-core Intel Xeon E7-4870 server
-
-							Number of Threads	Execution Time
-		SAMtools/Picard					   40	   29h 44m 55s
-		elPrep							   40	    1h 11m 38s
-
-We also excuted the same pipeline on a 2x8-core hyperthreaded Intel Xeon E5-2680 server with 256GB RAM. On this configuration, elPrep is 10.5 times faster than SAMtools and Picard.
-
-	Preparation of NA12878 on one 2x8-core hyperthreaded Intel Xeon E5-2680 server
-
-							Number of Threads	Execution Time
-		SAMtools/Picard					   32	   19h 19m 29s
-		elPrep							   32	    1h 54m 51s
 
 elPrep is being developed at the [ExaScience Life Lab](http://www.exascience.com), a collaboration between Imec, Intel, and Janssen Pharmaceutica. For questions, use our mailing list (below) or contact [Charlotte Herzeel](https://github.com/caherzee) directly.
 
@@ -172,7 +156,7 @@ Please use the LispWorks version when running and reporting benchmarks, since th
 
 # Demo
 
-We have a seperate [GitHub repository](https://github.com/ExaScience/elprep-demo) with demo scripts that use elPrep for procesing a subset of NA12878 that maps to chromosome 22.
+This repository includes demo scripts that use elPrep for procesing a NA12878 WES sample, as well as a subset of NA12878 WGS that maps to chromosome 22.
 
 # Manual Reference Pages
 
