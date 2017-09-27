@@ -475,7 +475,7 @@ A Python scripts that wraps the elprep.py, elprep-sfm.py and elprep-sfm-gnupar.p
 
 # Extending elPrep
 
-If you wish to extend elPrep, for example by adding your own filters, please consult our [API documentation](http://exascience.github.io/elprep/elprep-package/index.html). 
+If you wish to extend elPrep, for example by adding your own filters, please consult our [API documentation](http://exascience.github.io/cl-elprep/elprep-package/index.html).
 
 <!--### --timed
 
