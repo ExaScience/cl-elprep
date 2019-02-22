@@ -1,3 +1,7 @@
+# Important note
+
+This version of elPrep is not maintained anymore. Please use the new version of elPrep available at https://github.com/exascience/elprep.
+
 # Overview
 
 elPrep is a high-performance tool for preparing .sam/.bam/.cram files for variant calling in sequencing pipelines. It can be used as a drop-in replacement for SAMtools/Picard, and was extensively tested with different pipelines for variant analysis with GATK. The key advantage of elPrep is that it only performs a single-pass to process a .sam/.bam/.cram file, independent of the number of filters that need to be applied in a particular pipeline.
